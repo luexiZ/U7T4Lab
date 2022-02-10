@@ -128,7 +128,7 @@ public class ArrayListAlgorithms
      *  DOES mutate (modify) elements in numList
      *  PRECONDITION: numList1.size() > 0
      *
-     *  @param numList1  arraylist of Integers
+     *  @param numList1 arraylist of Integers
      */
     public static void removeOdds(ArrayList<Integer> numList)
     {
@@ -173,6 +173,92 @@ public class ArrayListAlgorithms
             }
         }
     }
+
+    public static void removeDuplicates(ArrayList<Integer> intList)
+    {
+         for (int i  = 0; i < intList.size(); i++)
+         {
+             for(int j = i + 1; j < intList.size(); j++)
+             {
+                 if(intList.get(i).equals(intList.get(j)))
+                 {
+                     intList.remove(j);
+                     j--;
+                 }
+             }
+         }
+    }
+
+    public static void duplicateUpperAfter(ArrayList<String> wordList)
+    {
+        for(int i = 0; i < wordList.size(); i++)
+        {
+            wordList.add(i +1, wordList.get(i).toUpperCase());
+            i ++;
+        }
+    }
+
+    public static void duplicateUpperEnd(ArrayList<String> wordList)
+    {
+        int originalSize = wordList.size();
+        for(int i = 0; i < originalSize; i++)
+        {
+            wordList.add(wordList.get(i).toUpperCase());
+        }
+    }
+
+    public static ArrayList<String> parseWordsAndReverse(String sentence)
+    {
+        ArrayList<String> returnSentence = new ArrayList<String>();
+        String separate = sentence;
+
+        int index = 0;
+        while (separate.indexOf(" ") != -1)
+        {
+            index = separate.indexOf(" ");
+            String word = separate.substring(0, index);
+            returnSentence.add(0, word);
+            separate = separate.substring(index + 1);
+        }
+        returnSentence.add(0, separate);
+        return returnSentence;
+    }
+
+    public static void moveBWords(ArrayList<String> wordList)
+    {
+        int increaseIndex = 0;
+        for(int i = 0; i < wordList.size(); i++)
+        {
+
+            if(wordList.get(i).indexOf("b") != -1)
+            {
+                wordList.add(increaseIndex, wordList.remove(i));
+                increaseIndex ++;
+            }
+        }
+    }
+
+    public static ArrayList<Integer> modes(int[] numList)
+    {
+        ArrayList<Integer> modes = new ArrayList<Integer>();
+        int counter = 0;
+        int max = 1;
+        for(int i = 0; i < numList.length; i++)
+        {
+
+            for(int j = i + 1; j < numList.length; j++)
+            {
+
+            }
+        }
+
+    }
+
+
+
+
+
+
 
 
 
