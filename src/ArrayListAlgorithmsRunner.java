@@ -6,6 +6,7 @@ public class ArrayListAlgorithmsRunner {
 
 
 
+
         int[] intList18 = {1, 2, 3, 2, 4, 5, 5, 6};
         ArrayList<Integer> modes = ArrayListAlgorithms.modes(intList18);
         System.out.println(modes);
@@ -25,6 +26,10 @@ public class ArrayListAlgorithmsRunner {
         int[] intList22 = {1, 2, 3, 4, 5, 6};
         ArrayList<Integer> modes5 = ArrayListAlgorithms.modes(intList22);
         System.out.println(modes5);
+
+
+
+
 
 
 

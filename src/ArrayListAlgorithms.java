@@ -240,16 +240,31 @@ public class ArrayListAlgorithms
     public static ArrayList<Integer> modes(int[] numList)
     {
         ArrayList<Integer> modes = new ArrayList<Integer>();
-        int counter = 0;
+
         int max = 1;
         for(int i = 0; i < numList.length; i++)
         {
-
+            int counter = 1;
             for(int j = i + 1; j < numList.length; j++)
             {
+                if(numList[i] == numList[j])
+                {
+                    counter++;
+                }
+            }
+            if(counter > max)
+            {
+                max = counter;
+                modes.clear();
+                modes.add(numList[i]);
 
             }
+            else if(counter == max && counter  != 1)
+            {
+                modes.add(numList[i]);
+            }
         }
+        return modes;
 
     }
 
